@@ -13,7 +13,7 @@ int main(){
     int op;
     printf("Bem vinde!\n");
     printf("Por favor, informe uma integral para aproximar\n");
-    printf("1. sen x \n2. x^3 \n3. e^{-x} \n4. pi(valor)\n");
+    printf("1. sen x \n2. x^3 \n3. e^{-x} \n4. pi(valor)\n" );
     printf("Escolha: ");
     scanf("%d", &op);
 
@@ -56,7 +56,7 @@ double uniDim(int a, int b, unsigned long int n, int op){
         res = res1 + res2;  
     }
          
-    return (b - a) * res / n;   
+    return (b - a) * res / n;
 }
 
 /* aproximar o valor de pi */
