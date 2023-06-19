@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <math.h>
 
 double interpolaLagrange(double x);
 double calculaWJ(int j);
 double trapezioC(int r);
 double simpsonC(int r);
 
-int pontosX[] = {0, 5, 10, 15, 20, 25, 30};
-double pontosFX[] = {0.0000, 1.5297, 9.5120, 8.7025, 2.8087, 1.0881, 0.3537};
+const int pontosX[] = {0, 5, 10, 15, 20, 25, 30};
+const double pontosFX[] = {0.0000, 1.5297, 9.5120, 8.7025, 2.8087, 1.0881, 0.3537};
 
 int main(){
-    int r = 5;
+    int r;
 
-    printf("%lf\n", trapezioC(r));
+    printf("Bem vinde! Informe um valor de r para aproximar a integral em [0,30]: ");
+    scanf("%d", &r);
+
+    printf("Integração por trapézio: %.3lf\n", trapezioC(r));    /* imprimir limitado a 3 casas decimais */
+    printf("Integração por Simpson: %.3lf\n", simpsonC(r));
 
     return 0;
 }
@@ -20,7 +23,6 @@ int main(){
 /* i. interpolacao por lagrange */
 double interpolaLagrange(double x){
     int i;
-    double wj;
     double px = 0.0;
     double phi = 1;
     for(i = 0; i < 7; i++){
